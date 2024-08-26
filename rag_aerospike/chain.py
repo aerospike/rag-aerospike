@@ -104,7 +104,7 @@ loader = PyPDFLoader("https://aerospike.com/files/ebooks/aerospike-up-and-runnin
 data = loader.load()
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=0)
+text_splitter = RecursiveCharacterTextSplitter(chunk_size=750, chunk_overlap=0)
 documents = text_splitter.split_documents(data)
 
 
@@ -122,7 +122,7 @@ store = Aerospike(
 # you can comment this out if this is not the first time running this chain
 store.add_documents(documents)
 
-retriever = store.as_retriever()
+retriever = store.as_retriever(k=8)
 template = """Answer the question based on the following context:
 Context: {context}
 Question: {question}
@@ -143,7 +143,7 @@ def _combine_documents(
 
 # RAG
 # This model requires that the OPENAI_API_KEY environment variable is set
-model = ChatOpenAI(model="gpt-3.5-turbo-16k")
+model = ChatOpenAI()
 chain = (
     {
         "context": retriever | _combine_documents,
