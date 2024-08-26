@@ -9,7 +9,6 @@ from langchain_core.prompts import format_document
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain_core.runnables import (
-    RunnableParallel,
     RunnablePassthrough,
 )
 from langchain_core.prompts.prompt import PromptTemplate
