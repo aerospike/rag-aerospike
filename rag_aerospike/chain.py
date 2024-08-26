@@ -97,6 +97,7 @@ avs_client = Client(
 )
 
 # load documents
+# you can comment this out if this is not the first time running this chain
 from langchain_community.document_loaders import PyPDFLoader
 # For this example we use a PDF of the Aerospike DB architecture whitepaper.
 # This RAG application will better answer Aerospike related questions based on this information.
@@ -119,6 +120,7 @@ store = Aerospike(
 )
 
 # Ingest documents
+# you can comment this out if this is not the first time running this chain
 store.add_documents(documents)
 
 retriever = store.as_retriever()
