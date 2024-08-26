@@ -1,12 +1,14 @@
 # rag-aerospike
 
-This template performs RAG using Aerospike Vector Search, HuggingFace embeddings, and an OpenAI LLM. The data set is a draft of the [Aerospike Up and Running book](https://aerospike.com/files/ebooks/aerospike-up-and-running-early-release3.pdf) which is loaded, tokenized, then embedded using the all-MiniLM-L6-v2 sentence transformer. The context and embeddings are stored in the Aerospike Vector Search LangChain vector store.
+This template performs RAG using Aerospike Vector Search (AVS), HuggingFace embeddings, and an OpenAI LLM. The data set is a draft of the [Aerospike Up and Running book](https://aerospike.com/files/ebooks/aerospike-up-and-running-early-release3.pdf) which is loaded, tokenized, then embedded using the all-MiniLM-L6-v2 sentence transformer. The context and embeddings are stored in the Aerospike Vector Search LangChain vector store.
 
 The chain exposed in this example shows basic usage of the Aerospike Vector Search LangChain vector store as a retriever for RAG applications.
 
 ## Environment Setup
 
 Set the `OPENAI_API_KEY` environment variable to access the [OpenAI](https://platform.openai.com) models:
+Set `AVS_HOST` (default: localhost) and `AVS_PORT` (default: 5000) to the address for your AVS deployment.
+Set `AVS_NAMESPACE` (default: test) to the Aerospike namespace to store vector data and indexes in.
 
 ## Usage
 
