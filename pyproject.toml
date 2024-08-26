@@ -10,7 +10,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.8.1,<4.0"
 langchain-core = ">=0.1.5,<0.3"
-aerospike = "~=1.0.0"
+aerospike-vector-search = ">=1.0.0"
 pypdf = ">=4.3.1"
 langchain-openai = ">=0.0.1"
 langchain-huggingface = ">=0.0.1"
