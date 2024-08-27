@@ -14,6 +14,7 @@ aerospike-vector-search = ">=1.0.0"
 pypdf = ">=4.3.1"
 langchain-openai = ">=0.0.1"
 langchain-huggingface = ">=0.0.1"
+langchain-community = ">=0.2.12"
 
 
 [tool.poetry.group.dev.dependencies]
