@@ -19,13 +19,13 @@ To use this package, you should first have the LangChain CLI installed:
 pip install -U langchain-cli
 ```
 
-To create a new LangChain project and install this as the only package, you can do:
+Create a new LangChain project:
 
 ```shell
-langchain app new my-app --package rag-aerospike
+langchain app new my-app
 ```
 
-If you want to add this to an existing project, you can just run:
+Add the Aerospike RAG langchain template to your new project:
 
 ```shell
 langchain app add --repo="aerospike/rag-aerospike/" --branch="main"
