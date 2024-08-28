@@ -34,6 +34,7 @@ class Config(object):
     AVS_INDEX_NAME = os.environ.get("AVS_INDEX_NAME") or "langchain-rag"
     AVS_IS_LOADBALANCER = get_bool_env("AVS_IS_LOADBALANCER", True)
     AVS_NAMESPACE = os.environ.get("AVS_NAMESPACE") or "test"
+    DATASOURCE = os.environ.get("DATASOURCE") or "https://aerospike.com/files/ebooks/aerospike-up-and-running-early-release3.pdf"
     # AVS_SET = os.environ.get("AVS_SET") or "quote-data"
     # AVS_INDEX_NAMESPACE = os.environ.get("AVS_INDEX_NAMESPACE") or "avs-index"
     # AVS_INDEX_SET = os.environ.get("AVS_INDEX_SET") or "quote-index"
@@ -100,7 +101,7 @@ avs_client = Client(
 from langchain_community.document_loaders import PyPDFLoader
 # For this example we use a PDF of the Aerospike DB architecture whitepaper.
 # This RAG application will better answer Aerospike related questions based on this information.
-loader = PyPDFLoader("https://aerospike.com/files/ebooks/aerospike-up-and-running-early-release3.pdf")
+loader = PyPDFLoader(Config.DATASOURCE)
 data = loader.load()
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter

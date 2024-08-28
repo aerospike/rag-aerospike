@@ -9,6 +9,7 @@ The chain exposed in this example shows basic usage of the Aerospike Vector Sear
 Set the `OPENAI_API_KEY` environment variable to access the [OpenAI](https://platform.openai.com) models:
 Set `AVS_HOST` (default: localhost) and `AVS_PORT` (default: 5000) to the address for your AVS deployment.
 Set `AVS_NAMESPACE` (default: test) to the Aerospike namespace to store vector data and indexes in.
+Set `DATASOURCE` (default: https://aerospike.com/files/ebooks/aerospike-up-and-running-early-release3.pdf) to a URL or file path of a PDF you would like to index. The text from the PDF will be used as context in the RAG application.
 
 ## Usage
 
